@@ -41,5 +41,5 @@ public class Compra extends MetodoPagamento{
         }
         System.out.println("Valor total: R$ " + getValor());
 
-
+    }
 }

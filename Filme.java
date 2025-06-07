@@ -13,15 +13,12 @@ public class Filme extends Midia{
     //get
     public String getDuracao(){return duracao;}
 
+    //metodos
+    // GABIIIII VOCE AQUUII <3
+    // reescreve esse metodo aqui. coloquei so p n dar erro no codigo bjos
     @Override
-    public void descricao(){
-        System.out.println("Descrição do Filme:");
-        System.out.println("Título: " + this.getTitulo() );
-        System.out.println("Sinopse: " + this.getSinopse() );
-        System.out.println("Genero: " + this.getGenero() );
-        System.out.println("Diretor: " + this.getDiretor() );
-        System.out.println("Genero: " + this.getGenero() );
-        System.out.println("Duracão: " + this.getDuracao());
-        System.out.println("--------------------------------");
+    public void reproduzir() {
+        System.out.println("Reproduzindo filme: " + getTitulo() + " (com duracao de " + getDuracao() + ")");
     }
+
 }

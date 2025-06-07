@@ -24,6 +24,10 @@ public abstract class Midia {
     public int getAno(){return ano;}
 
     //metodos
-    abstract void descricao();
+    //GABI VOCE AQUI !!!!! <3
+    //criando esse metodo xexelento so pra nao dar erro no codigo pras filhas de midia, mas refaça esse aqui bjosss
+    public void reproduzir() {
+        System.out.println("Reproduzindo a mídia: " + titulo);
+    }
 
 }

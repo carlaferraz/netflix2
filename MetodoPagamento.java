@@ -9,11 +9,17 @@ public abstract class MetodoPagamento {
     }
 
     //get
-    public double getValor(){return valor;}
-    public String getFormaPagamento(){return formaPagamento;}
+    public double getValor(){
+        return valor;}
+
+    public String getFormaPagamento(){
+        return formaPagamento;}
 
     //metodos
-    //GABIII VOCE AQUI OMGGG AGAIN
-    //reescreve o metodo aqui blz diva
+    public void exibirResumoPagamento() {
+        System.out.println("Forma de Pagamento: " + formaPagamento);
+        System.out.println("Valor: R$" + valor);
+    }
+
     public abstract void processarPagamento();
 }

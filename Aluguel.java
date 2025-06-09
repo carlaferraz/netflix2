@@ -10,10 +10,15 @@ public class Aluguel extends MetodoPagamento{
     public int getDiasAluguel(){return diasAluguel;}
 
     //metodos
-    //GABIIIIIIIIIII USTED ACÁ CHICA HERMOSA
-    //reescreveeeeeerrrrrrrrrrrrrrrr s2s2s2
+    public void exibirResumoAluguel() {
+    }
+
     @Override
     public void processarPagamento() {
-        System.out.println("Processando pagamento de aluguel para " + diasAluguel + " dias. Valor total: R$ " + getValor() + ". Pagamento em: " + getFormaPagamento());
+        System.out.println("Resumo do Aluguel:");
+        System.out.println("Dias de Aluguel: " + diasAluguel);
+        System.out.println("Forma de Pagamento: " + getFormaPagamento());
+        System.out.println("Valor Total: R$ " + getValor());
     }
+
 }

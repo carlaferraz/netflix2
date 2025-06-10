@@ -41,7 +41,7 @@ public class PlataformaStreaming {
 
     //adicionar usuário à plataforma
     public void adicionarUsuario(Usuario usuario) {
-        usuarios.add(usuario);
+       usuarios.add(usuario);
         System.out.println("Usuário cadastrado: " + usuario.getNome());
     }
 
@@ -74,18 +74,33 @@ public class PlataformaStreaming {
     }
 
     public void realizarCompra(Usuario usuario, Midia midia, MetodoPagamento pagamento) {
-        usuario.comprarMidia(midia);
-        pagamento.processarPagamento();
-        totalCompras++;
-        System.out.println("Compra realizada com sucesso para " + usuario.getNome());
+        try {
+            if (!midia.isDisponivelParaCompra()) {
+                throw new MidiaIndisponivelException("A mídia '" + midia.getTitulo() + "' não está disponível para compra.");
+            }
+            usuario.comprarMidia(midia);
+            pagamento.processarPagamento();
+            totalCompras++;
+            System.out.println("Compra realizada com sucesso para " + usuario.getNome());
+        } catch (MidiaIndisponivelException e) {
+            System.out.println("Erro ao realizar compra: " + e.getMessage());
+        }
     }
 
     public void realizarAluguel(Usuario usuario, Midia midia, MetodoPagamento pagamento) {
-        usuario.alugarMidia(midia);
-        pagamento.processarPagamento();
-        totalAlugueis++;
-        System.out.println("Aluguel realizado com sucesso para " + usuario.getNome());
+        try {
+            if (!midia.isDisponivelParaAlugar()) {
+                throw new MidiaIndisponivelException("A mídia '" + midia.getTitulo() + "' não está disponível para aluguel.");
+            }
+            usuario.alugarMidia(midia);
+            pagamento.processarPagamento();
+            totalAlugueis++;
+            System.out.println("Aluguel realizado com sucesso para " + usuario.getNome());
+        } catch (MidiaIndisponivelException e) {
+            System.out.println("Erro ao realizar aluguel: " + e.getMessage());
+        }
     }
+
 
     public void exibirResumoTransacoes() {
         System.out.println("Resumo de transações da plataforma " + nomePlataforma + ":");

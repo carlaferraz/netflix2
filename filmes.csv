@@ -1,0 +1,4 @@
+titulo;sinopse;genero;diretor;ano;duracao;disponivelParaAlugar;disponivelParaCompra
+Matrix;"Um hacker descobre a verdade sobre a realidade";Ficção;Lana Wachowski;1999;136;true;true
+Titanic;"Uma história de amor no navio mais famoso do mundo";Romance;James Cameron;1997;195;true;false
+Shrek;"Um ogro e um burro numa missão";Animação;Andrew Adamson;2001;90;false;true

@@ -1,9 +1,43 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class FileManager {
     private String caminhoArquivo;
+
+    public List<Filme> carregarFilmes() {
+        List<Filme> lista = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(caminhoArquivo))) {
+            if (scanner.hasNextLine()) scanner.nextLine(); // pular cabeçalho
+
+            while (scanner.hasNextLine()) {
+                String linha = scanner.nextLine();
+                String[] dados = linha.split(";", -1);
+
+                if (dados.length >= 8) {
+                    String titulo = dados[0].trim();
+                    String sinopse = dados[1].trim();
+                    String genero = dados[2].trim();
+                    String diretor = dados[3].trim();
+                    int ano = Integer.parseInt(dados[4].trim());
+                    String duracao = dados[5].trim();
+                    boolean disponivelCompra = Boolean.parseBoolean(dados[6].trim());
+                    boolean disponivelAluguel = Boolean.parseBoolean(dados[7].trim());
+
+                    Filme filme = new Filme(titulo, sinopse, genero, diretor, ano, duracao, disponivelAluguel, disponivelCompra);
+                    lista.add(filme);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo não encontrado: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro ao processar dados: " + e.getMessage());
+        }
+        return lista;
+    }
+
 
     public FileManager(String caminhoArquivo) {
         this.caminhoArquivo = caminhoArquivo;

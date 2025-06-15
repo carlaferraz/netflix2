@@ -40,6 +40,7 @@ public class Filme extends Midia{
         return "Filme: " + getTitulo() + " (" + getAno() + ") - " + getGenero() +
                 "\nDiretor: " + getDiretor() +
                 "\nDuração: " + getDuracao() +
+                "\nSinopse: " + getSinopse() +
                 "\nDisponível para aluguel? " + (isDisponivelParaAlugar() ? "Sim" : "Não") +
                 "\nDisponível para compra? " + (isDisponivelParaCompra() ? "Sim" : "Não");
     }

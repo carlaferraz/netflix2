@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        FileManager fmFilmes = new FileManager("database/Filme.csv");
+        FileManager fmFilmes = new FileManager("database/filmes.csv");
         FileManager fmSeries = new FileManager("database/Serie.csv");
 
         Scanner input = new Scanner(System.in);

@@ -5,6 +5,8 @@ import java.awt.event.*;
 public class Onboarding extends JFrame {
     private JLabel imagemLabel;
     private JButton proximoBtn;
+    private Usuario usuario;
+
 
     private String[] imagens = {
             "TOUR 9.png",
@@ -36,11 +38,18 @@ public class Onboarding extends JFrame {
         add(proximoBtn, BorderLayout.SOUTH);
 
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("./resources/Simbolo.png"));
-        setIconImage(icon.getImage());
+        //ImageIcon icon = new ImageIcon(getClass().getResource("./resources/Simbolo.png"));
+        //setIconImage(icon.getImage());
 
-        setVisible(true);
+        //setVisible(true);
     }
+
+    public Onboarding(Usuario usuario) {
+        this(); // chama o construtor padrão que monta a interface
+        this.usuario = usuario;
+
+    }
+
 
     private void avancar() {
         indice++;
@@ -67,4 +76,6 @@ public class Onboarding extends JFrame {
         SwingUtilities.invokeLater(Onboarding::new);
 
     }
+
+
 }

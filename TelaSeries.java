@@ -9,7 +9,6 @@ public class TelaSeries extends JFrame {
     private DefaultListModel<String> listaModel;
     private JList<String> listaSeries;
     private List<Filme> filmes;
-
     private JButton btnComprar;
     private JButton btnAlugar;
     private JButton voltar;

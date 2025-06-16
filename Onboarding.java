@@ -18,8 +18,7 @@ public class Onboarding extends JFrame {
 
 
     //disclaimer:
-    //aqui eu basicamente copiei um código pronto em swift que eu já tinha do CineFilés e modifiquei pra dar certo em java swing
-    //a logica foi a mesma, so mudei algumas coisas de semantica, entao talvez por isso algumas coisas parecem estar fora de encaixe
+
     public Onboarding() {
         setTitle("CineFilés");
         setSize(350, 700);
@@ -38,10 +37,10 @@ public class Onboarding extends JFrame {
         add(proximoBtn, BorderLayout.SOUTH);
 
 
-        //ImageIcon icon = new ImageIcon(getClass().getResource("./resources/Simbolo.png"));
-        //setIconImage(icon.getImage());
+        ImageIcon icon = new ImageIcon(getClass().getResource("./resources/Simbolo.png"));
+        setIconImage(icon.getImage());
 
-        //setVisible(true);
+        setVisible(true);
     }
 
     public Onboarding(Usuario usuario) {
